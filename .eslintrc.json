@@ -27,6 +27,7 @@
     "jsx-a11y/href-no-hash": ["off"],
     "react/jsx-props-no-spreading": ["off"],
     "react/react-in-jsx-scope": ["off"],
+    "quotes": ["error", "single"],
     "react/jsx-filename-extension": [
       "warn",
       {
