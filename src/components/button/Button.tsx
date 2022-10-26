@@ -5,7 +5,7 @@ interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  primary: boolean;
+  primary?: boolean;
   /**
    * What background color to use
    */
@@ -13,7 +13,7 @@ interface ButtonProps {
   /**
    * How large should the button be?
    */
-  size: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large';
   /**
    * Button contents
    */
