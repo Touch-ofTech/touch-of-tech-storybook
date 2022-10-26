@@ -27,6 +27,7 @@
     "jsx-a11y/href-no-hash": ["off"],
     "react/jsx-props-no-spreading": ["off"],
     "react/react-in-jsx-scope": ["off"],
+    "import/no-extraneous-dependencies": ["off"],
     "quotes": ["error", "single"],
     "react/jsx-filename-extension": [
       "warn",
@@ -47,6 +48,9 @@
     "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": "error",
     "react/prop-types": 0,
+    "react/function-component-definition":"off",
+    "react/require-default-props":"off",
+    "import/prefer-default-export":"off",
     "import/extensions": [
       "error",
       "ignorePackages",
