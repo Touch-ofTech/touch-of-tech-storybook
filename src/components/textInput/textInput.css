@@ -1,0 +1,44 @@
+.input-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  width: 150px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input-label {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 12px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input-field {
+  border: 1px solid #b9b4bf;
+  border-radius: 4px;
+  padding: 5px;
+  outline: none;
+  min-width: 150px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+}
+
+.input-field:focus {
+  border: 1px solid rgb(48, 48, 48);
+}
+
+.input-field::placeholder {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.572);
+  line-height: 15px;
+  font-weight: 100;
+}
+
+.input-error {
+  border: 1px solid #d83951;
+}
