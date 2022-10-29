@@ -5,15 +5,14 @@
   flex-direction: column;
   gap: 8px;
   width: 150px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .input-label {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
   color: black;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .input-field {
@@ -22,10 +21,9 @@
   padding: 5px;
   outline: none;
   min-width: 150px;
-  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
-  font-weight: 300;
-  line-height: 14px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .input-field:focus {
@@ -35,10 +33,14 @@
 .input-field::placeholder {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.572);
-  line-height: 15px;
-  font-weight: 100;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .input-error {
   border: 1px solid #d83951;
+}
+
+.valid {
+  border: 1px solid #248750;
 }

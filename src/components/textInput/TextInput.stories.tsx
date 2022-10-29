@@ -33,3 +33,27 @@ Error.args = {
   error: true,
   placeholder: 'Error...',
 };
+
+export const Valid = Template.bind({});
+Valid.args = {
+  /* the args you need here will depend on your component */
+  label: 'Default Input',
+  error: false,
+  valid: true,
+  placeholder: 'Valid...',
+};
+
+export const InputFormWithLabels = () => (
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'column',
+      gap: '1rem',
+    }}
+  >
+    <TextInput label="Email" placeholder="carlos@email.com" />
+    <TextInput label="Password" placeholder="********" type="password" />
+  </div>
+);

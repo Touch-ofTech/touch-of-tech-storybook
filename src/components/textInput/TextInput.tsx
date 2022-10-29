@@ -3,12 +3,13 @@ import './textInput.css';
 
 interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
   label?: string;
-  error: boolean;
+  error?: boolean;
   theme?: string;
+  valid?: boolean;
 }
 
 export const TextInput = ({ ...props }: TextInputProps) => {
-  const { theme, error, label, id } = props;
+  const { theme, error, label, id, valid } = props;
 
   return (
     <div className="input-container">
@@ -20,8 +21,9 @@ export const TextInput = ({ ...props }: TextInputProps) => {
       )}
       <input
         id={id}
-        className={`input-field ${theme} ${error ? 'input-error' : ''}`}
-        type="text"
+        className={`input-field ${theme} ${
+          error && !valid ? 'input-error' : 'valid'
+        }`}
         {...props}
       />
     </div>
