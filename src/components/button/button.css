@@ -9,6 +9,7 @@
   min-width: 84px;
   transition: all 150ms ease-out;
 }
+
 .storybook-button--primary {
   color: white;
   background-color: #1ea7fd;
@@ -53,7 +54,14 @@
   font-size: 14px;
   padding: 11px 20px;
 }
+
 .storybook-button--large {
   font-size: 16px;
   padding: 12px 24px;
+}
+
+.outline{
+  background-color: #FFFFFF;
+  color: #7B61FF;
+  border: 1px solid #7B61FF;
 }

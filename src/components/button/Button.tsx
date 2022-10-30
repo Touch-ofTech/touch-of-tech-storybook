@@ -30,6 +30,10 @@ interface ButtonProps {
    * boolean valor
    */
   disable?: boolean;
+  /**
+   *  the data-testid  is neccesary to do the test
+   */
+  dataTestId?: string;
 }
 
 /**
@@ -42,6 +46,7 @@ export const Button = ({
   backgroundColor,
   label,
   className,
+  dataTestId,
   ...props
 }: ButtonProps) => {
   const mode = primary
@@ -57,6 +62,7 @@ export const Button = ({
         `storybook-button--${size} ${className}`,
         mode,
       ].join(' ')}
+      data-testid="storybook-button-test_id"
       disabled={disable}
       style={{ backgroundColor }}
       {...props}

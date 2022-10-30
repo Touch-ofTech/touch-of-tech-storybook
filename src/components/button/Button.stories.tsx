@@ -72,3 +72,15 @@ export const Medium = Template.bind({});
 Medium.args = {
   size: 'medium',
 };
+
+export const Disable = Template.bind({});
+Disable.args = {
+  disable: true,
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+  size: 'medium',
+  className: 'outline',
+  primary: true,
+};
