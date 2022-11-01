@@ -1,6 +1,6 @@
 import React from 'react';
-import './button.css';
 import arrow from '../../assets/arrow.svg';
+import './button.css';
 
 interface ButtonProps {
   /**
@@ -59,7 +59,6 @@ export const Button = ({
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
 
-  // const state = disable ? disabled : "null";
   return (
     <button
       type="button"
@@ -75,10 +74,8 @@ export const Button = ({
     >
       {label}
 
-      {icon ? (
+      {icon && (
         <img src={arrow} style={{ marginTop: '5px', marginLeft: '5px' }} />
-      ) : (
-        ''
       )}
     </button>
   );

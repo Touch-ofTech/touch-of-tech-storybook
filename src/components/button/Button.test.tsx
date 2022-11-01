@@ -2,10 +2,6 @@ import { render, screen } from '@testing-library/react';
 import { Button } from './Button';
 
 describe('Basic button component test', () => {
-  /* beforeAll(()=>{
-        render(<Button size="small" label="Test Button"  disable={false}/>)
-    }); */
-
   it('Render correctly', () => {
     render(<Button size="small" label="Test Button" disable={false} />);
     expect(screen.getByTestId('storybook-button-test_id')).toBeDefined();
