@@ -13,11 +13,11 @@ export default {
 } as ComponentMeta<typeof Flex>;
 
 const heigths = [
-  { height: '60px', color: 'red' },
-  { height: '80px', color: 'orange' },
+  { height: '60px', color: 'tomato' },
+  { height: '80px', color: 'sandybrown' },
   { height: '30px', color: 'yellow' },
-  { height: '100px', color: 'green' },
-  { height: '70px', color: 'blue' },
+  { height: '100px', color: 'olivedrab' },
+  { height: '70px', color: 'steelblue' },
 ];
 
 const Template: ComponentStory<typeof Flex> = (args) => (
@@ -26,7 +26,7 @@ const Template: ComponentStory<typeof Flex> = (args) => (
       <div
         key={heigthVal.color}
         style={{
-          width: '50px',
+          width: '10%',
           backgroundColor: heigthVal.color,
           border: 'solid 3px black',
           borderRadius: '10px',

@@ -1,30 +1,11 @@
 import React, { ReactNode } from 'react';
+import { IFlex } from '../../interfaces/IFlexContainer';
 import './flex.css';
 
 interface IFlexProps {
   className?: string;
-  justify?:
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'space-between'
-    | 'space-around'
-    | 'space-evenly'
-    | 'start'
-    | 'end'
-    | 'left';
-  align?:
-    | 'stretch'
-    | 'flex-start'
-    | 'flex-end'
-    | 'center'
-    | 'baseline'
-    | 'first-baseline'
-    | 'last baseline'
-    | 'start'
-    | 'end'
-    | 'self-start'
-    | 'self-end';
+  justify?: IFlex['justify'];
+  align?: IFlex['align'];
   gap?: string;
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
   children?: ReactNode;
