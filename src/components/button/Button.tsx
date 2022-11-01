@@ -1,5 +1,6 @@
 import React from 'react';
 import './button.css';
+import arrow from '../../assets/arrow.svg';
 
 interface ButtonProps {
   /**
@@ -34,6 +35,10 @@ interface ButtonProps {
    *  the data-testid  is neccesary to do the test
    */
   dataTestId?: string;
+  /**
+   *  icon is a boolean valor
+   */
+  icon?: boolean;
 }
 
 /**
@@ -42,6 +47,7 @@ interface ButtonProps {
 export const Button = ({
   primary = false,
   disable = false,
+  icon = false,
   size = 'medium',
   backgroundColor,
   label,
@@ -68,6 +74,12 @@ export const Button = ({
       {...props}
     >
       {label}
+
+      {icon ? (
+        <img src={arrow} style={{ marginTop: '5px', marginLeft: '5px' }} />
+      ) : (
+        ''
+      )}
     </button>
   );
 };
