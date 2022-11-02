@@ -1,4 +1,5 @@
 import React from 'react';
+import arrow from '../../assets/arrow.svg';
 import './button.css';
 
 interface ButtonProps {
@@ -26,6 +27,18 @@ interface ButtonProps {
    * Custom Classname
    */
   className?: string;
+  /**
+   * boolean valor
+   */
+  disable?: boolean;
+  /**
+   *  the data-testid  is neccesary to do the test
+   */
+  dataTestId?: string;
+  /**
+   *  icon is a boolean valor
+   */
+  icon?: boolean;
 }
 
 /**
@@ -33,15 +46,19 @@ interface ButtonProps {
  */
 export const Button = ({
   primary = false,
+  disable = false,
+  icon = false,
   size = 'medium',
   backgroundColor,
   label,
   className,
+  dataTestId,
   ...props
 }: ButtonProps) => {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
+
   return (
     <button
       type="button"
@@ -50,10 +67,16 @@ export const Button = ({
         `storybook-button--${size} ${className}`,
         mode,
       ].join(' ')}
+      data-testid="storybook-button-test_id"
+      disabled={disable}
       style={{ backgroundColor }}
       {...props}
     >
       {label}
+
+      {icon && (
+        <img src={arrow} style={{ marginTop: '5px', marginLeft: '5px' }} />
+      )}
     </button>
   );
 };

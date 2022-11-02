@@ -8,7 +8,7 @@ export default {
   title: 'Components/Button',
   component: Button,
   args: {
-    label: 'Hello',
+    label: 'Button',
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -23,9 +23,10 @@ export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   primary: true,
+  disable: false,
 };
 
-export const Secondary = Template.bind({}); //  need update
+export const Secondary = Template.bind({});
 
 export const Success = Template.bind({});
 Success.args = {
@@ -39,6 +40,14 @@ Danger.args = {
   className: 'danger',
   primary: true,
   size: 'small',
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  className: 'info',
+  primary: true,
+  size: 'small',
+  label: 'Link',
 };
 
 export const Custom = Template.bind({});
@@ -57,4 +66,21 @@ Large.args = {
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  size: 'medium',
+};
+
+export const Disable = Template.bind({});
+Disable.args = {
+  disable: true,
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+  size: 'medium',
+  className: 'outline',
+  primary: true,
 };
