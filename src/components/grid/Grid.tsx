@@ -18,6 +18,7 @@ export const Grid = ({
 }: IGridProps) => {
   return (
     <div
+      data-testid="grid-component"
       className={`display-grid ${className}`}
       style={{
         gridTemplateColumns: template_columns,
