@@ -19,6 +19,7 @@ export const Banner = ({
     <div
       className={['banner', `banner--${theme}`].join(' ')}
       style={{ top, left }}
+      data-testid="banner-container"
     >
       <div
         className={['check-container', `check-container--${theme}`].join(' ')}
