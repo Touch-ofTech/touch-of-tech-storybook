@@ -3,9 +3,9 @@ import './grid.css';
 
 interface IGridProps {
   className?: string;
-  template_rows?: string;
-  template_columns?: string;
-  gap?: string;
+  template_rows: string;
+  template_columns: string;
+  gap: string;
   children?: ReactNode;
 }
 
