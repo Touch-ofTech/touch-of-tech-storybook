@@ -42,7 +42,6 @@
   color: white;
   border-radius: 6px;
   background-color: #1ea7fd;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
 
 .storybook-button--small {
