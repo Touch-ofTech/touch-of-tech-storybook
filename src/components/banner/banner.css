@@ -1,12 +1,11 @@
 .banner {
   position: absolute;
-  width: 769px;
+  width: 100vw;
   height: 65px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding: 8px 364px 8px 8px;
+  padding: 8px;
   gap: 10px;
   background: #e6f7f6;
   border-radius: 12px;

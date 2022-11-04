@@ -4,7 +4,7 @@ import './banner.css';
 
 interface BannerProps {
   label: string;
-  theme?: 'success' | 'danger' | 'warning' | 'info';
+  theme: 'success' | 'danger' | 'warning' | 'info';
   top?: string;
   left?: string;
 }
@@ -17,17 +17,24 @@ export const Banner = ({
 }: BannerProps) => {
   return (
     <div
-      className={['banner', `banner--${theme}`].join(' ')}
+      className={`${(theme && `banner banner--${theme}`) || 'banner'}`}
       style={{ top, left }}
       data-testid="banner-container"
     >
       <div
-        className={['check-container', `check-container--${theme}`].join(' ')}
+        className={`${
+          (theme && `check-container check-container--${theme}`) ||
+          'check-container'
+        }`}
       >
         <img src={check} alt="checking" />
       </div>
 
-      <p className={['banner-text', `banner-text--${theme}`].join(' ')}>
+      <p
+        className={`${
+          (theme && `banner-text banner-text--${theme}`) || 'banner-text'
+        }`}
+      >
         {label}
       </p>
     </div>
