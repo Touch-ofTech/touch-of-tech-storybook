@@ -17,6 +17,12 @@ const colors = [
   'yellow',
   'olivedrab',
   'steelblue',
+  'steelblue',
+  'steelblue',
+  'steelblue',
+  'steelblue',
+  'steelblue',
+  'steelblue',
   'mediumorchid',
 ];
 
