@@ -10,5 +10,9 @@ interface TypoProps {
 }
 
 export const Typography = ({ className, type, label }: TypoProps) => {
-  return <span className={`${className || type}`}>{label}</span>;
+  return (
+    <span data-testid="typography" className={`${className || type}`}>
+      {label}
+    </span>
+  );
 };
