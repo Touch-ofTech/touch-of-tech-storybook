@@ -75,7 +75,11 @@ export const Button = ({
       {label}
 
       {icon && (
-        <img src={arrow} style={{ marginTop: '5px', marginLeft: '5px' }} />
+        <img
+          src={arrow}
+          style={{ marginTop: '5px', marginLeft: '5px' }}
+          alt="arrow"
+        />
       )}
     </button>
   );
