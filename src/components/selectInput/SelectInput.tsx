@@ -17,7 +17,10 @@ export const SelectInput = (Props: any) => {
   };
 
   return (
-    <div className="slctInputContainer">
+    <div
+      data-testid="storybook-select-input-test_id"
+      className="slctInputContainer"
+    >
       <p className="slctInputLabel">{label}</p>
       <div
         className={`slctInputHead ${!isOpen ? '' : 'open'}`}
