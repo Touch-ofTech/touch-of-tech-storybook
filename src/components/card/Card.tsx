@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import './card.css';
 
 interface CardProps {
-  children?: ReactNode;
+  children: ReactNode;
   widthSize: string;
   heightSize: string;
   className?: string;
@@ -10,8 +10,8 @@ interface CardProps {
 
 export const Card = ({
   children,
-  widthSize,
-  heightSize,
+  widthSize = '436px',
+  heightSize = '495px',
   className,
 }: CardProps) => {
   return (
