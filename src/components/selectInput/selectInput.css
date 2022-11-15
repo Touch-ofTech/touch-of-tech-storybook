@@ -1,0 +1,83 @@
+*{
+    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.slctInputLabel{
+    font-size: 14px;
+    font-weight: bold;
+    color:gray;
+}
+
+.slctInputContainer{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    min-width: 100px;
+}
+
+.slctInputHead{
+    display: flex;
+    flex:1;
+    border: solid lightgrey 2px;
+    padding: 15px;
+    padding-left: 20px;
+    border-radius: 8px;
+    justify-content: space-between;
+    transition: .2s;
+}
+
+.slctInputHead:hover{
+    border: solid dodgerblue 3px;
+    padding: 14px;
+    padding-left: 19px;
+}
+.open{
+    border: solid lightskyblue 2px;
+}
+.slctInputHeadSelection{
+
+}
+
+.slctInputHeadArrow{
+
+    width:20px;
+    transition: .02s;
+
+
+}
+
+.slctInputHeadArrow img{
+    transition: .2s;
+    transform: rotateX(0deg);
+    z-index: 1;
+    
+}
+.slctInputListContainer{
+    text-decoration: none;
+}
+
+.open img{
+    transform: rotateX(-180deg);
+}
+
+
+.slctInputList{
+    position: absolute;
+    transform:  translateY(100px);
+    border: solid 1px lightgray;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow:   0.3em 0.3em 1em rgba(0,0,0,0.3);
+    min-width:200px;
+    z-index: 2;
+}
+.middle{
+    border-bottom: 1px solid lightgray;
+}
+.slctInputListItem{
+    text-decoration: none;
+    padding: 12px;
+    padding-left: 18px;
+    
+}
+
