@@ -1,5 +1,6 @@
 .skeleton {
   animation: skeleton-loading 1s linear infinite alternate;
+  background: #E6E9EF;
 }
 
 @keyframes skeleton-loading {
@@ -12,11 +13,9 @@
 }
 
 .circle {
-  background: #E6E9EF;
-  border-radius: 100px;
+  border-radius: 50%;
 }
 
 .container {
-  background: #E6E9EF;
   border-radius: 4px;
 }
