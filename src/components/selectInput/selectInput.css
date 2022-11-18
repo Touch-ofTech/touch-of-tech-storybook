@@ -1,83 +1,80 @@
-*{
-    font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.select-input-container div,p{
+    font-family:  'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
 }
 
-.slctInputLabel{
+.select-input-label{
     font-size: 14px;
     font-weight: bold;
-    color:gray;
+    color: gray;
+    padding-left: 2px;
 }
 
-.slctInputContainer{
+.select-input-container{
     display: flex;
     flex-direction: column;
     width: auto;
-    min-width: 100px;
+    min-width: 240px;
+    cursor: pointer;
 }
 
-.slctInputHead{
+.select-input-head{
     display: flex;
     flex:1;
     border: solid lightgrey 2px;
-    padding: 15px;
-    padding-left: 20px;
-    border-radius: 8px;
+    padding: 16px 20px;
+    border-radius: 4px;
     justify-content: space-between;
     transition: .2s;
 }
 
-.slctInputHead:hover{
-    border: solid dodgerblue 3px;
-    padding: 14px;
-    padding-left: 19px;
+.select-input-head:hover{
+    border: solid #1A67FF 2px;
 }
+
 .open{
-    border: solid lightskyblue 2px;
-}
-.slctInputHeadSelection{
-
+    border: solid #1A67FF 2px;
 }
 
-.slctInputHeadArrow{
-
+.select-input-head-arrow{
     width:20px;
     transition: .02s;
-
-
 }
 
-.slctInputHeadArrow img{
+.select-input-head-arrow img{
     transition: .2s;
     transform: rotateX(0deg);
     z-index: 1;
-    
-}
-.slctInputListContainer{
-    text-decoration: none;
 }
 
 .open img{
     transform: rotateX(-180deg);
 }
 
-
-.slctInputList{
+.select-input-list{
     position: absolute;
     transform:  translateY(100px);
     border: solid 1px lightgray;
     border-radius: 10px;
     background-color: white;
-    box-shadow:   0.3em 0.3em 1em rgba(0,0,0,0.3);
-    min-width:200px;
+    box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+    width: 240px;
     z-index: 2;
 }
-.middle{
-    border-bottom: 1px solid lightgray;
-}
-.slctInputListItem{
+
+.select-input-list-item{
     text-decoration: none;
-    padding: 12px;
-    padding-left: 18px;
-    
+    padding: 16px 24px;
+    border-bottom: 1px solid lightgray;
+    transition: 0.2s;
+}
+
+.select-input-list :nth-last-child(1){
+    border-bottom: 1px solid transparent;
+}
+
+.select-input-list-item:hover{
+    color: #1A67FF;
 }
 

@@ -24,8 +24,7 @@ export default {
 } as ComponentMeta<typeof SelectInput>;
 
 const Template: ComponentStory<typeof SelectInput> = (args) => (
-  <div style={{ width: '200px' }}>
-    <SelectInput {...args} />
+  <div style={{ width: '240px' }}>
     <SelectInput {...args} />
   </div>
 );

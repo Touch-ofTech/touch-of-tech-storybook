@@ -5,13 +5,18 @@ import React, { useState } from 'react';
 import arrow from '../../assets/arrow.svg';
 import './selectInput.css';
 
-export const SelectInput = (Props: any) => {
+interface ISelectInputProps {
+  label?: string;
+  values: Array<string | number>;
+}
+
+export const SelectInput = (Props: ISelectInputProps) => {
   const { label, values } = Props;
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(values[0]);
   const toggling = () => setIsOpen(!isOpen);
 
-  const selectOption = (value: string) => {
+  const selectOption = (value: string | number) => {
     setSelectedOption(value);
     setIsOpen(false);
   };
@@ -19,35 +24,43 @@ export const SelectInput = (Props: any) => {
   return (
     <div
       data-testid="storybook-select-input-test_id"
-      className="slctInputContainer"
+      className="select-input-container"
     >
-      <p className="slctInputLabel">{label}</p>
+      {label ? <p className="select-input-label">{label}</p> : ''}
       <div
-        className={`slctInputHead ${!isOpen ? '' : 'open'}`}
+        className={`select-input-head ${!isOpen ? '' : 'open'}`}
         onClick={() => toggling()}
       >
-        <div className="slctInputHeadSelection">
+        <div className="select-input-head-selection">
           {selectedOption || values[0]}
         </div>
-        <div className="slctInputHeadArrow">
-          <img src={arrow} />
+        <div className="select-input-head-arrow">
+          <img src={arrow} alt="arrow" />
         </div>
       </div>
       {isOpen && (
-        <div className="slctInputList">
-          {values.map((option: string, index: number, array: Array<string>) => (
-            <div
-              key={option}
-              className={`slctInputListItem ${
-                index !== array.length - 1 ? 'middle' : ''
-              }`}
-              onClick={() => selectOption(option)}
-            >
-              {option}
-            </div>
-          ))}
+        <div className="select-input-list">
+          {values.map(
+            (
+              option: string | number,
+              index: number,
+              array: Array<string | number>,
+            ) => (
+              <div
+                key={option}
+                className="select-input-list-item"
+                onClick={() => selectOption(option)}
+              >
+                {option}
+              </div>
+            ),
+          )}
         </div>
       )}
     </div>
   );
+};
+
+SelectInput.defaultProps = {
+  label: undefined,
 };

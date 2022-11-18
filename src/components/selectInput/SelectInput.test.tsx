@@ -21,6 +21,7 @@ describe('Basic select input component test', () => {
     render(<SelectInput label="Test Select" values={values} />);
     expect(screen.getByTestId('storybook-select-input-test_id')).toBeDefined();
   });
+
   it('Input´s label have the text content', () => {
     render(<SelectInput label="Test Select" values={values} />);
     expect(
