@@ -1,0 +1,80 @@
+.select-input-container div,p{
+    font-family:  'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.select-input-label{
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    padding-left: 2px;
+}
+
+.select-input-container{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    min-width: 240px;
+    cursor: pointer;
+}
+
+.select-input-head{
+    display: flex;
+    flex:1;
+    border: solid lightgrey 2px;
+    padding: 16px 20px;
+    border-radius: 4px;
+    justify-content: space-between;
+    transition: .2s;
+}
+
+.select-input-head:hover{
+    border: solid #1A67FF 2px;
+}
+
+.open{
+    border: solid #1A67FF 2px;
+}
+
+.select-input-head-arrow{
+    width:20px;
+    transition: .02s;
+}
+
+.select-input-head-arrow img{
+    transition: .2s;
+    transform: rotateX(0deg);
+    z-index: 1;
+}
+
+.open img{
+    transform: rotateX(-180deg);
+}
+
+.select-input-list{
+    position: absolute;
+    transform:  translateY(100px);
+    border: solid 1px lightgray;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+    width: 240px;
+    z-index: 2;
+}
+
+.select-input-list-item{
+    text-decoration: none;
+    padding: 16px 24px;
+    border-bottom: 1px solid lightgray;
+    transition: 0.2s;
+}
+
+.select-input-list :nth-last-child(1){
+    border-bottom: 1px solid transparent;
+}
+
+.select-input-list-item:hover{
+    color: #1A67FF;
+}
+
