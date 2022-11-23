@@ -1,7 +1,6 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .iconWrapper {
@@ -14,6 +13,7 @@
     text-align: center;
     width: 100px;
     height: 100px;
+    margin: 10px 0px 10px 10px
 }
 
 span {
