@@ -39,3 +39,15 @@ FullWidth.args = {
   title: 'FullWidht',
   type: 'full-width',
 };
+
+export const SideLeft = Template.bind({});
+SideLeft.args = {
+  title: 'FullWidht',
+  type: 'side-modal-left',
+};
+
+export const SideRight = Template.bind({});
+SideRight.args = {
+  title: 'side-modal-right',
+  type: 'side-modal-right',
+};
