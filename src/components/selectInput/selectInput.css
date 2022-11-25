@@ -40,12 +40,14 @@
 .select-input-head-arrow{
     width:20px;
     transition: .02s;
+    
 }
 
 .select-input-head-arrow img{
     transition: .2s;
     transform: rotateX(0deg);
     z-index: 1;
+    filter: invert(.3) sepia(1) saturate(5) hue-rotate(175deg);
 }
 
 .open img{
