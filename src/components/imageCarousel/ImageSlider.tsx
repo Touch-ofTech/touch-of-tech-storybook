@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -36,24 +37,34 @@ export const ImageSlider = ({
   const [slideIndex, setSlideIndex] = useState(0);
   const [prevSlideIndex, setPrevSlideIndex] = useState(1);
 
-  const changeSlide = (
-    index?: number | undefined,
-    next?: boolean,
-    prev?: boolean,
-  ) => {
+  const changeSlide = (index: number | 'next' | 'prev') => {
     setPrevSlideIndex(slideIndex);
-    if (index) {
+    if (typeof index === 'number') {
       setSlideIndex(index);
     } else {
-      setSlideIndex(next ? slideIndex + 1 : prev ? slideIndex - 1 : 0);
+      setSlideIndex(
+        index === 'next'
+          ? slideIndex + 1
+          : index === 'prev'
+          ? slideIndex - 1
+          : 0,
+      );
+      console.log(data.length);
       slideIndex > data.length - 1
-        ? setSlideIndex(1)
-        : slideIndex <= 0
+        ? setSlideIndex(0)
+        : slideIndex < 0
         ? setSlideIndex(data.length - 1)
         : '';
     }
+    console.log(slideIndex);
   };
 
+  const nextChangeSlide = () => {
+    changeSlide('next');
+  };
+  const prevChangeSlide = () => {
+    changeSlide('prev');
+  };
   const moveDot = (index: number) => {
     changeSlide(index);
   };
@@ -77,11 +88,13 @@ export const ImageSlider = ({
             }`}
           >
             <img src={obj.img} alt={obj.title} />
+            <div className="slide-text title">{obj.title}</div>
+            <div className="slide-text subtitle">{obj.subtitle}</div>
           </div>
         );
       })}
-      <BtnSlider moveSlide={changeSlide} direction="next" />
-      <BtnSlider moveSlide={changeSlide} direction="prev" />
+      <BtnSlider moveSlide={nextChangeSlide} direction="next" />
+      <BtnSlider moveSlide={prevChangeSlide} direction="prev" />
       {dots ? (
         <div className="container-dots">
           {data.map((item, index) => (
