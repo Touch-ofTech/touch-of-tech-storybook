@@ -1,13 +1,6 @@
-/* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/jsx-key */
-/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
-import './imageSlider.css';
 import Arrow from '../../assets/arrow.svg';
+import './imageSlider.css';
 
 const BtnSlider = ({
   direction,
@@ -42,21 +35,14 @@ export const ImageSlider = ({
     if (typeof index === 'number') {
       setSlideIndex(index);
     } else {
-      setSlideIndex(
-        index === 'next'
-          ? slideIndex + 1
-          : index === 'prev'
-          ? slideIndex - 1
-          : 0,
-      );
-      console.log(data.length);
-      slideIndex > data.length - 1
-        ? setSlideIndex(0)
-        : slideIndex < 0
-        ? setSlideIndex(data.length - 1)
-        : '';
+      let newSlideIndex;
+      if (index === 'next') newSlideIndex = slideIndex + 1;
+      else if (index === 'prev') newSlideIndex = slideIndex - 1;
+      else newSlideIndex = 0;
+      setSlideIndex(newSlideIndex);
+      if (slideIndex > data.length - 1) setSlideIndex(0);
+      else if (slideIndex < 0) setSlideIndex(data.length - 1);
     }
-    console.log(slideIndex);
   };
 
   const nextChangeSlide = () => {
@@ -71,25 +57,24 @@ export const ImageSlider = ({
 
   return (
     <div className="container-slider">
-      {data.map((obj, index) => {
+      {data.map((slide, index) => {
+        let extraAttribute;
+        if (index === slideIndex) {
+          if (slideIndex > prevSlideIndex) extraAttribute = 'active-anim-rigth';
+          else extraAttribute = 'active-anim-left';
+        } else if (index === prevSlideIndex) {
+          if (slideIndex > prevSlideIndex)
+            extraAttribute = 'inactive-anim-rigth';
+          else extraAttribute = 'inactive-anim-left';
+        } else extraAttribute = 'hidden';
         return (
           <div
-            key={`slide${index}`}
-            className={`slide ${
-              index === slideIndex
-                ? slideIndex > prevSlideIndex
-                  ? 'active-anim-rigth'
-                  : 'active-anim-left'
-                : index === prevSlideIndex
-                ? slideIndex > prevSlideIndex
-                  ? 'inactive-anim-rigth'
-                  : 'inactive-anim-left'
-                : ''
-            }`}
+            key={`slide${slide.title}`}
+            className={`slide ${extraAttribute}`}
           >
-            <img src={obj.img} alt={obj.title} />
-            <div className="slide-text title">{obj.title}</div>
-            <div className="slide-text subtitle">{obj.subtitle}</div>
+            <img src={slide.img} alt={slide.title} />
+            <div className="slide-text title">{slide.title}</div>
+            <div className="slide-text subtitle">{slide.subtitle}</div>
           </div>
         );
       })}
@@ -97,12 +82,15 @@ export const ImageSlider = ({
       <BtnSlider moveSlide={prevChangeSlide} direction="prev" />
       {dots ? (
         <div className="container-dots">
-          {data.map((item, index) => (
-            <div
-              key={`dot${index}`}
+          {data.map((slide, index) => (
+            <button
+              type="button"
+              key={`dot${slide.title}`}
               onClick={() => moveDot(index)}
               className={slideIndex === index ? 'dot active' : 'dot'}
-            />
+            >
+              {' '}
+            </button>
           ))}
         </div>
       ) : (
