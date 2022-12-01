@@ -17,6 +17,7 @@
     position: absolute;
     opacity: 0;
     animation-duration:.4s;
+    box-shadow: 0 -100px 200px rgba(50,50,50,0.9) inset;
 
   }
   .slide img {
@@ -24,6 +25,10 @@
     height: 100%;
     object-fit: cover;
     box-shadow: 0 -100px 200px rgba(50,50,50,0.9) inset;
+  }
+
+  .hidden{
+    opacity: 0;
   }
 
 @keyframes slideinrigth{
@@ -45,11 +50,14 @@
 }
 
 @keyframes slideoutrigth{
-    from{
+    0%{
         transform: translate(0%);
+    }
+    99%{
     }
     to{
         transform: translate(-100%);
+        display: none;
     }
 }
 
@@ -57,8 +65,11 @@
     from{
         transform: translate(0%);
     }
+    99%{
+    }
     to{
         transform: translate(100%);
+        display: none;
     }
 }
 
@@ -125,6 +136,7 @@
     border: 3px solid #f1f1f1;
     margin: 0 5px;
     background: rgb(32, 32, 32);
+    cursor: pointer;
   }
   .active {
     background: #f1f1f1;
