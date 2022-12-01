@@ -1,0 +1,101 @@
+:root {
+  --roboto-font: 'Roboto', sans-serif;
+}
+
+.modal-overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100vw; /* Full width (cover the whole page) */
+  height: 100vh; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  cursor: pointer; /* Add a pointer on hover */
+  transition: all ease 1s;
+}
+
+.modal-display {
+  display: none;
+}
+
+.is-open {
+  display: block;
+}
+
+.modal-wrapper {
+  display: flex;
+}
+
+.modal-container {
+  transition: all ease-in-out 1s;
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 8px;
+  padding: 24px;
+  font-family: var(--roboto-font);
+  z-index: 6;
+}
+
+.modal-container-variant {
+  transition: all ease-in-out 1s;
+  background: white;
+  font-family: var(--roboto-font);
+  z-index: 6;
+  padding: 24px;
+}
+
+.default {
+  width: 520px;
+  height: 200px;
+  top: 250px;
+  left: 25%;
+  position: fixed;
+}
+
+.full-width {
+  width: 80vw;
+  height: 200px;
+  top: 250px;
+  right: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+
+.side-modal-left {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 50vw;
+  border-top-left-radius: 0;
+}
+
+.side-modal-right {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 50vw;
+  border-top-right-radius: 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.span {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.buttons-container {
+  display: flex;
+  align-self: flex-end;
+  justify-self: flex-end;
+}

@@ -3,6 +3,5 @@ export { Button } from './button/Button';
 export { Card } from './card/Card';
 export { Flex } from './flex/Flex';
 export { Grid } from './grid/Grid';
-export { Page } from './page/Page';
 export { TextInput } from './textInput/TextInput';
 export { Typography } from './typography/Typography';
