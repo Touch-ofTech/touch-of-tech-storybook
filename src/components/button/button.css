@@ -1,6 +1,16 @@
+:root{
+  --primary: #1ea7fd;
+  --danger: #FF5962;
+  --success: #00968d;
+  --outline: #7B61FF;
+  --custom: #7B61FF;
+  --custom-font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-weigth: 700;
+} 
+
 .storybook-button {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: var(--font-weigth);
   border: 0;
   border-radius: 24px;
   cursor: pointer;
@@ -8,24 +18,27 @@
   line-height: 1;
   min-width: 84px;
   transition: all 150ms ease-out;
+  color: white;
+  background-color: var(--primary);
 }
 
-.storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
+.storybook-button--secondary { 
+  border-radius: 0px;
 }
 
 .success {
-  background-color: #00b0a6;
+  background-color: var(--success);
+  --outline: var(--success);
 }
 
 .success:hover {
-  background-color: #00968d;
+  background-color: var(--success);
   box-shadow: 0px 24px 32px -12px rgba(0, 0, 0, 0.15);
 }
 
 .danger {
-  background-color: #FF5962;
+  background-color: var(--danger);
+  --outline:var(--danger);
 }
 
 .danger:hover {
@@ -33,15 +46,15 @@
   box-shadow: 0px 24px 32px -12px rgba(0, 0, 0, 0.15);
 }
 
-.info{
-  background-color: transparent;
-  color: #0094FF;
+.custom{
+  background-color: var(--custom);
+  font-family: var(--custom-font-family), sans-serif;
+  --outline: var(--custom);
 }
 
-.storybook-button--secondary { 
-  color: white;
-  border-radius: 6px;
-  background-color: #1ea7fd;
+.info{
+  background-color: transparent;
+  color: var(--success);
 }
 
 .storybook-button--small {
@@ -55,12 +68,17 @@
 }
 
 .storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+  font-size: 22px;
+  padding: 16px 26px;
 }
 
 .outline{
-  background-color: #FFFFFF;
-  color: #7B61FF;
-  border: 1px solid #7B61FF;
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--outline);
+  border: 1px solid var(--outline);
+}
+
+.outline:hover{
+  background-color: var(--outline);
+  color: #fff;
 }
