@@ -1,6 +1,6 @@
 import React from 'react';
-import './heroSection.css';
 import imageProfile from '../../assets/image.png';
+import './HeroSection.css';
 
 interface HeroProps {
   names: string;
@@ -10,15 +10,15 @@ interface HeroProps {
 
 export const HeroSection = ({ names, date, location }: HeroProps) => {
   return (
-    <div className="main-container">
-      <div className="info-container">
-        <p className="data-paragraph">Please join us to celebrate</p>
-        <p className="names-paragraph">{names}</p>
-        <p className="data-paragraph">
+    <section className="hero-container">
+      <div className="hero-content-container">
+        <p className="hero-title">Please join us to celebrate</p>
+        <p className="hero-subtitle">{names}</p>
+        <p className="hero-title">
           {date} - {location}
         </p>
       </div>
-      <img src={imageProfile} alt="main image" className="image-container" />
-    </div>
+      <img src={imageProfile} alt="main image" className="hero-img" />
+    </section>
   );
 };
