@@ -13,12 +13,12 @@ interface IGridItemProps {
 
 export const GridItems = ({ GridItemsValues }: IGridItemProps) => {
   return (
-    <div className="grid-items-container-wrapper">
+    <section className="grid-items-container">
       {GridItemsValues.map((GridItem) => (
         <div key={GridItem.title} className="grid-item-container">
           <div className="grid-item-title">{GridItem.title}</div>
           <div className="grid-item-description">{GridItem.description}</div>
-          {GridItem.buttonLabel ? (
+          {GridItem.buttonLabel && (
             <a href={GridItem.linkUrl} className="grid-item-button">
               <Button
                 label={GridItem.buttonLabel}
@@ -27,13 +27,11 @@ export const GridItems = ({ GridItemsValues }: IGridItemProps) => {
                 fontFamily="Montaga"
                 fontWeigth="400"
                 size="large"
-              />{' '}
+              />
             </a>
-          ) : (
-            ''
           )}
         </div>
       ))}
-    </div>
+    </section>
   );
 };
