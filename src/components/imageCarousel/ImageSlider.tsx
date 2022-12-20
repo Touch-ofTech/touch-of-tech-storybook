@@ -28,59 +28,55 @@ export const ImageSlider = ({
   data: any[];
 }) => {
   const [slideIndex, setSlideIndex] = useState(0);
-  const [prevSlideIndex, setPrevSlideIndex] = useState(1);
 
-  const changeSlide = (index: number | 'next' | 'prev') => {
-    setPrevSlideIndex(slideIndex);
-    if (typeof index === 'number') {
-      setSlideIndex(index);
-    } else {
-      let newSlideIndex;
-      if (index === 'next') newSlideIndex = slideIndex + 1;
-      else if (index === 'prev') newSlideIndex = slideIndex - 1;
-      else newSlideIndex = 0;
-      setSlideIndex(newSlideIndex);
-      if (slideIndex > data.length - 1) setSlideIndex(0);
-      else if (slideIndex < 0) setSlideIndex(data.length - 1);
+  const moveDot = (index: number) => {
+    if (slideIndex !== index) {
+      if (slideIndex < index) {
+        setSlideIndex(index - 1);
+        nextslide();
+      } else {
+        setSlideIndex(index + 1);
+        prevSlide();
+      }
     }
   };
 
-  const nextChangeSlide = () => {
-    changeSlide('next');
+  const nextslide = () => {
+    const slider: any = document.querySelector('.slider-container');
+    if (slideIndex === data.length - 1) {
+      slider.style.transform = 'translateX(0)';
+      setSlideIndex(0);
+    } else {
+      slider.style.transform = `translateX(-${(slideIndex + 1) * 700}px)`;
+      setSlideIndex(slideIndex + 1);
+    }
   };
-  const prevChangeSlide = () => {
-    changeSlide('prev');
-  };
-  const moveDot = (index: number) => {
-    changeSlide(index);
+
+  const prevSlide = () => {
+    const slider: any = document.querySelector('.slider-container');
+    if (slideIndex === 0) {
+      slider.style.transform = `translateX(-${(data.length - 1) * 700}px)`;
+      setSlideIndex(data.length - 1);
+    } else {
+      slider.style.transform = `translateX(-${(slideIndex - 1) * 700}px)`;
+      setSlideIndex(slideIndex - 1);
+    }
   };
 
   return (
     <div className="container-slider">
-      {data.map((slide, index) => {
-        let extraAttribute;
-        if (index === slideIndex) {
-          if (slideIndex > prevSlideIndex) extraAttribute = 'active-anim-rigth';
-          else extraAttribute = 'active-anim-left';
-        } else if (index === prevSlideIndex) {
-          if (slideIndex > prevSlideIndex)
-            extraAttribute = 'inactive-anim-rigth';
-          else extraAttribute = 'inactive-anim-left';
-        } else extraAttribute = 'hidden';
-        return (
-          <div
-            key={`slide${slide.title}`}
-            className={`slide ${extraAttribute}`}
-          >
-            <img src={slide.img} alt={slide.title} />
-            <div className="slide-text title">{slide.title}</div>
-            <div className="slide-text subtitle">{slide.subtitle}</div>
+      <div className="slider-container">
+        {data.map((item) => (
+          <div key={item.title} className="img-container">
+            <img src={item.img} alt={item.title} />
+            <div className="slide-text title">{item.title}</div>
+            <div className="slide-text subtitle">{item.subtitle}</div>
           </div>
-        );
-      })}
-      <BtnSlider moveSlide={nextChangeSlide} direction="next" />
-      <BtnSlider moveSlide={prevChangeSlide} direction="prev" />
-      {dots ? (
+        ))}
+      </div>
+      <BtnSlider moveSlide={nextslide} direction="next" />
+      <BtnSlider moveSlide={prevSlide} direction="prev" />
+      {dots && (
         <div className="container-dots">
           {data.map((slide, index) => (
             <button
@@ -93,8 +89,6 @@ export const ImageSlider = ({
             </button>
           ))}
         </div>
-      ) : (
-        ''
       )}
     </div>
   );
