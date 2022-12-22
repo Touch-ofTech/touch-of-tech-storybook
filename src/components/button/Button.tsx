@@ -12,6 +12,14 @@ interface ButtonProps {
    */
   backgroundColor?: string;
   /**
+   * What background color to use
+   */
+  borderColor?: string;
+  /**
+   * What custom color, if any, should the font be
+   */
+  fontColor?: string;
+  /**
    * What custom font should be used
    */
   fontFamily?: string;
@@ -40,10 +48,6 @@ interface ButtonProps {
    */
   disable?: boolean;
   /**
-   *  the data-testid  is neccesary to do the test
-   */
-  dataTestId?: string;
-  /**
    *  icon is a boolean valor
    */
   icon?: boolean;
@@ -58,43 +62,37 @@ export const Button = ({
   icon = false,
   size = 'medium',
   backgroundColor,
+  borderColor,
+  fontColor,
   fontFamily,
   fontWeigth,
   label,
   className,
-  dataTestId,
   ...props
 }: ButtonProps) => {
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
-  if (backgroundColor) {
-    document.documentElement.style.setProperty('--custom', backgroundColor);
-  }
-  if (fontFamily) {
-    document.documentElement.style.setProperty(
-      '--custom-font-family',
-      fontFamily,
-    );
-  }
-  if (fontWeigth) {
-    document.documentElement.style.setProperty('--font-weigth', fontWeigth);
-  } else {
-    document.documentElement.style.setProperty('--font-weigth', '700');
-  }
+
+  const buttonStyle = {
+    backgroundColor,
+    border: `1px solid ${borderColor}`,
+    color: fontColor,
+    fontFamily,
+    fontWeigth,
+  };
 
   return (
     <button
       type="button"
       className={[
         'storybook-button',
-        `storybook-button--${size} ${className} ${
-          backgroundColor || fontFamily ? 'custom' : ''
-        }`,
+        `storybook-button--${size} ${className}`,
         mode,
       ].join(' ')}
       data-testid="storybook-button-test_id"
       disabled={disable}
+      style={buttonStyle}
       {...props}
     >
       {label}

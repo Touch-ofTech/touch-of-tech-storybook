@@ -23,7 +23,8 @@ export const GridItems = ({ GridItemsValues }: IGridItemProps) => {
               <Button
                 label={GridItem.buttonLabel}
                 className="outline"
-                backgroundColor="#C6754D"
+                borderColor="#C6754D"
+                fontColor="#C6754D"
                 fontFamily="Montaga"
                 fontWeigth="400"
                 size="large"

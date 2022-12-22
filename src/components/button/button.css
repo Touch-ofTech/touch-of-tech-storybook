@@ -3,9 +3,6 @@
   --danger: #FF5962;
   --success: #00968d;
   --outline: #7B61FF;
-  --custom: #7B61FF;
-  --custom-font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-weigth: 700;
 } 
 
 .storybook-button {
@@ -46,12 +43,6 @@
   box-shadow: 0px 24px 32px -12px rgba(0, 0, 0, 0.15);
 }
 
-.custom{
-  background-color: var(--custom);
-  font-family: var(--custom-font-family), sans-serif;
-  --outline: var(--custom);
-}
-
 .info{
   background-color: transparent;
   color: var(--success);
@@ -73,12 +64,7 @@
 }
 
 .outline{
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
   color: var(--outline);
   border: 1px solid var(--outline);
-}
-
-.outline:hover{
-  background-color: var(--outline);
-  color: #fff;
 }
