@@ -1,5 +1,5 @@
 import React from 'react';
-import arrow from '../../assets/arrow.svg';
+import { Icon } from '../iconLibrary/IconLibrary';
 import './button.css';
 
 interface ButtonProps {
@@ -50,7 +50,7 @@ interface ButtonProps {
   /**
    *  icon is a boolean valor
    */
-  icon?: boolean;
+  icon?: string;
 }
 
 /**
@@ -59,7 +59,7 @@ interface ButtonProps {
 export const Button = ({
   primary = false,
   disable = false,
-  icon = false,
+  icon,
   size = 'medium',
   backgroundColor,
   borderColor,
@@ -97,13 +97,7 @@ export const Button = ({
     >
       {label}
 
-      {icon && (
-        <img
-          src={arrow}
-          style={{ marginTop: '5px', marginLeft: '5px' }}
-          alt="arrow"
-        />
-      )}
+      {icon && <Icon iconName={icon} />}
     </button>
   );
 };
