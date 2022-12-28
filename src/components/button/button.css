@@ -18,6 +18,7 @@
   transition: all 150ms ease-out;
   color: white;
   background-color: var(--primary);
+  border: 1px solid var(--primary);
 }
 
 .storybook-button--secondary { 
@@ -26,22 +27,20 @@
 
 .success {
   background-color: var(--success);
-  --outline: var(--success);
+  border: 1px solid var(--success);
 }
 
 .success:hover {
-  background-color: var(--success);
-  box-shadow: 0px 24px 32px -12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 24px 32px -12px rgba(0, 0, 0, 0.15);
 }
 
 .danger {
   background-color: var(--danger);
-  --outline:var(--danger);
+  border: 1px solid var(--danger);
 }
 
 .danger:hover {
-  background-color: #E44B53;
-  box-shadow: 0px 24px 32px -12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 24px 32px -12px rgba(0, 0, 0, 0.15);
 }
 
 .info{
@@ -64,8 +63,10 @@
   padding: 16px 26px;
 }
 
-.outline{
+.outline {
   background-color: transparent;
-  color: var(--outline);
-  border: 1px solid var(--outline);
+}
+
+.outline:hover{
+  background-color: inherit;
 }

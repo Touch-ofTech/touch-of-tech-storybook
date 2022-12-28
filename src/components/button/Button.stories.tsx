@@ -56,6 +56,7 @@ Custom.args = {
   size: 'small',
   label: 'Custom',
   backgroundColor: '#7B61FF',
+  borderColor: '#7B61FF',
   primary: true,
 };
 

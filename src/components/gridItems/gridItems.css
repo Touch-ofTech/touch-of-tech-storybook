@@ -7,10 +7,10 @@ div{
 
 .grid-items-container{
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 30%);
-    grid-template-rows: 475px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr ;
     gap: 64px;
     background: #FCF9F7;
     justify-content: center;

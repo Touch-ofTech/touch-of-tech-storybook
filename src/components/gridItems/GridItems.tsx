@@ -1,6 +1,6 @@
 import React from 'react';
-import './gridItems.css';
 import { Button } from '../button/Button';
+import './gridItems.css';
 
 interface IGridItemProps {
   GridItemsValues: {
