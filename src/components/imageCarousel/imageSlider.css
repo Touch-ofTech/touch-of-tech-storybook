@@ -42,22 +42,25 @@
   cursor: pointer;
 }
 
-.btn-slide img {
+.btn-slide i {
   width: 25px;
   height: 25px;
+  font-size: 35px;
   pointer-events: none;
+  font-weight: 900;
+  text-shadow: 0 0 15px #f1f1f1;
 }
 
 .prev-arrow {
   top: 50%;
   left: 20px;
-  transform: translateY(-60%) rotate(90deg);
+  transform: translateY(-60%) rotate(-90deg);
 }
 
 .next-arrow {
   top: 50%;
   right: 20px;
-  transform: translateY(-60%) rotate(-90deg);
+  transform: translateY(-60%) rotate(90deg);
 }
 
 .container-dots {
@@ -74,12 +77,12 @@
   border-radius: 50%;
   border: 3px solid #f1f1f1;
   margin: 0 5px;
-  background: rgb(32, 32, 32);
+  background: #f1f1f1;
   cursor: pointer;
 }
 
 .active {
-  background: #f1f1f1;
+  background: rgb(32, 32, 32);
 }
 
 .slide-text {

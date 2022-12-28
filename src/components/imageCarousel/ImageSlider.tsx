@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Arrow from '../../assets/arrow.svg';
+import { Icon } from '../iconLibrary/IconLibrary';
 import './imageSlider.css';
 
 const BtnSlider = ({
@@ -15,7 +15,7 @@ const BtnSlider = ({
       onClick={moveSlide}
       className={`btn-slide ${direction}-arrow`}
     >
-      <img src={Arrow} alt={direction} />
+      <Icon iconName="ctrl" />
     </button>
   );
 };
@@ -30,14 +30,10 @@ export const ImageSlider = ({
   const [slideIndex, setSlideIndex] = useState(0);
 
   const moveDot = (index: number) => {
+    const slider: any = document.querySelector('.slider-container');
     if (slideIndex !== index) {
-      if (slideIndex < index) {
-        setSlideIndex(index - 1);
-        nextslide();
-      } else {
-        setSlideIndex(index + 1);
-        prevSlide();
-      }
+      setSlideIndex(index);
+      slider.style.transform = `translateX(-${index * 700}px)`;
     }
   };
 
