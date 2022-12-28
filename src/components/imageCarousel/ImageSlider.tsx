@@ -13,7 +13,7 @@ const BtnSlider = ({
     <button
       type="button"
       onClick={moveSlide}
-      className={`btn-slide ${direction}`}
+      className={`btn-slide ${direction}-arrow`}
     >
       <img src={Arrow} alt={direction} />
     </button>
@@ -79,14 +79,11 @@ export const ImageSlider = ({
       {dots && (
         <div className="container-dots">
           {data.map((slide, index) => (
-            <button
-              type="button"
+            <div
               key={`dot${slide.title}`}
               onClick={() => moveDot(index)}
               className={slideIndex === index ? 'dot active' : 'dot'}
-            >
-              {' '}
-            </button>
+            />
           ))}
         </div>
       )}
