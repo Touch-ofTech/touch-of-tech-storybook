@@ -1,0 +1,39 @@
+.navigation-container{
+ display: flex;
+ width: 100vw;
+}
+
+.navigation-half{
+    display: flex;
+    width: 45%;
+}
+
+.navigation-logo{
+    width: 10%;
+    height: 10vw;
+    object-fit: cover;
+}
+
+.navigation-button{
+    font-family: 'Montaga';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+    color: #2B1105;
+    opacity: 0.6;
+    transition: .2s;
+    flex-basis: 100%;
+
+}
+
+.navigation-button:hover{
+    cursor: pointer;
+    opacity: 1;
+    font-weight: 500;
+    
+}
