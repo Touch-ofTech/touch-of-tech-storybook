@@ -1,32 +1,34 @@
 import React from 'react';
-import imageOne from '../../assets/image1_sidebyside.jpg';
-import imageTwo from '../../assets/image2_sidebyside.jpg';
 import './SideBySide.css';
 
 interface SideBySideProps {
   title: string;
-  anotherTitle: string;
+  secondTitle: string;
   description: string;
-  anotherDescription?: string;
-  image?: boolean;
+  secondDescription?: string;
+  images: string[];
   date?: string;
 }
 
 export const SideBySide = ({
   title,
-  anotherTitle,
+  secondTitle,
   description,
-  anotherDescription,
+  secondDescription,
   date,
-  image = true,
+  images,
 }: SideBySideProps) => {
   return (
     <section className="sidebyside-section">
-      {image ? (
+      {images?.length !== 0 ? (
         <div className="sidebyside-main_container">
           <div className="sidebyside-left_container">
             <div className="sidebyside-image_profile">
-              <img src={imageOne} className="sidebyside-portrait" />
+              <img
+                src={images[0]}
+                alt={images[0]}
+                className="sidebyside-portrait"
+              />
             </div>
             <p className="sidebyside-title">{title}</p>
             <p className="sidebyside-description">{description}</p>
@@ -34,10 +36,14 @@ export const SideBySide = ({
 
           <div className="sidebyside-right_container">
             <div className="sideyside-image_profile">
-              <img src={imageTwo} className="sidebyside-portrait" />
+              <img
+                src={images[1]}
+                alt={images[1]}
+                className="sidebyside-portrait"
+              />
             </div>
-            <p className="sidebyside-title">{anotherTitle}</p>
-            <p className="sidebyside-description">{anotherDescription}</p>
+            <p className="sidebyside-title">{secondTitle}</p>
+            <p className="sidebyside-description">{secondDescription}</p>
           </div>
         </div>
       ) : (
