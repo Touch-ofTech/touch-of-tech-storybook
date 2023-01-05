@@ -4,10 +4,16 @@ import './navigation.css';
 interface INavigationProps {
   labels: string[];
   links?: string[];
-  logo: string;
+  innitial1: string;
+  innitial2: string;
 }
 
-export const Navigation = ({ labels, links, logo }: INavigationProps) => {
+export const Navigation = ({
+  labels,
+  links,
+  innitial1,
+  innitial2,
+}: INavigationProps) => {
   return (
     <div className="navigation-container">
       <div className="navigation-half">
@@ -21,7 +27,7 @@ export const Navigation = ({ labels, links, logo }: INavigationProps) => {
         )}
       </div>
 
-      <img src={logo} className="navigation-logo" alt="logo" />
+      <div className="navigation-logo">{`${innitial1}&${innitial2}`}</div>
 
       <div className="navigation-half">
         {labels.map(

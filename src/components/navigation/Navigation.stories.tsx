@@ -6,7 +6,8 @@ export default {
   component: Navigation,
   args: {
     labels: ['Home', 'Our Story', 'Venue', 'Itinierary', 'Registry', 'RSVP'],
-    logo: 'https://seeklogo.com/images/F/facebook-icon-circle-logo-09F32F61FF-seeklogo.com.png',
+    innitital1: 'C',
+    innitial2: 'M',
   },
 } as ComponentMeta<typeof Navigation>;
 
