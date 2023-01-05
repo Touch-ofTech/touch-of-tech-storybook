@@ -13,6 +13,7 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    fontColor: { control: 'color' },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -55,6 +56,7 @@ Custom.args = {
   size: 'small',
   label: 'Custom',
   backgroundColor: '#7B61FF',
+  borderColor: '#7B61FF',
   primary: true,
 };
 

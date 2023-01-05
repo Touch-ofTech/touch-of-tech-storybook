@@ -1,0 +1,39 @@
+.navigation-container{
+ display: flex;
+ width: 100vw;
+}
+
+.navigation-half{
+    display: flex;
+    flex: 2;
+}
+
+.navigation-logo{
+    flex: 1;
+    height: 100%;
+    font-size: x-large;
+    border-radius: 50%;
+    border: 1.5px black solid;
+    color: black;
+}
+
+.navigation-button{
+    font-family: 'Montaga';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #2B1105;
+    opacity: 0.6;
+    transition: .2s;
+    flex-basis: 100%;
+}
+
+.navigation-button:hover{
+    cursor: pointer;
+    opacity: 1;
+    font-weight: 500;
+}

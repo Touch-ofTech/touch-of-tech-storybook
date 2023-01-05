@@ -1,47 +1,51 @@
+:root{
+  --primary: #1ea7fd;
+  --danger: #FF5962;
+  --success: #00968d;
+  --outline: #7B61FF;
+} 
+
 .storybook-button {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: var(--font-weigth);
   border: 0;
   border-radius: 24px;
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   line-height: 1;
   min-width: 84px;
   transition: all 150ms ease-out;
+  color: white;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
 }
 
-.storybook-button--primary {
-  color: white;
-  background-color: #1ea7fd;
+.storybook-button--secondary { 
+  border-radius: 0px;
 }
 
 .success {
-  background-color: #00b0a6;
+  background-color: var(--success);
+  border: 1px solid var(--success);
 }
 
 .success:hover {
-  background-color: #00968d;
-  box-shadow: 0px 24px 32px -12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 24px 32px -12px rgba(0, 0, 0, 0.15);
 }
 
 .danger {
-  background-color: #FF5962;
+  background-color: var(--danger);
+  border: 1px solid var(--danger);
 }
 
 .danger:hover {
-  background-color: #E44B53;
-  box-shadow: 0px 24px 32px -12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 24px 32px -12px rgba(0, 0, 0, 0.15);
 }
 
 .info{
   background-color: transparent;
-  color: #0094FF;
-}
-
-.storybook-button--secondary { 
-  color: white;
-  border-radius: 6px;
-  background-color: #1ea7fd;
+  color: var(--success);
 }
 
 .storybook-button--small {
@@ -55,12 +59,14 @@
 }
 
 .storybook-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+  font-size: 22px;
+  padding: 16px 26px;
 }
 
-.outline{
-  background-color: #FFFFFF;
-  color: #7B61FF;
-  border: 1px solid #7B61FF;
+.outline {
+  background-color: transparent;
+}
+
+.outline:hover{
+  background-color: inherit;
 }
