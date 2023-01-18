@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react';
-import arrow from '../../assets/arrow.svg';
+import { Icon } from '../iconLibrary/IconLibrary';
 import './selectInput.css';
 
 interface ISelectInputProps {
@@ -35,7 +35,7 @@ export const SelectInput = (Props: ISelectInputProps) => {
           {selectedOption || values[0]}
         </div>
         <div className="select-input-head-arrow">
-          <img src={arrow} alt="arrow" />
+          <Icon iconName="circle-down" />
         </div>
       </div>
       {isOpen && (
