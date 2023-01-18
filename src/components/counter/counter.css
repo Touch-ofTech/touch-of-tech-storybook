@@ -1,0 +1,45 @@
+.counter-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.counter-container div{
+    margin-top: 32px;
+}
+
+.counter-image{
+    max-width: 380px;
+    object-fit: contain;
+}
+
+.counter-location{
+    font-family: 'Montaga';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+
+    text-align: center;
+
+    color: #C6754D;
+}
+
+.counter-timer{ 
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 800px;
+}
+
+.counter-timer-text{
+    font-family: 'Montaga';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 100%;
+    text-align: center;
+}
