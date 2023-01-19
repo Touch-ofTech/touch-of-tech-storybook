@@ -43,3 +43,14 @@
     line-height: 100%;
     text-align: center;
 }
+
+@media(max-width: 800px){
+    .counter-timer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .counter-timer-text{
+        font-size: 45px;
+        display: grid;
+    }
+}

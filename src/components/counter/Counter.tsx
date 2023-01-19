@@ -40,10 +40,10 @@ export const Counter = ({ date, place, image }: ICounterProps) => {
         } / ${time.getFullYear()} - ${place}`}
       </div>
       <div className="counter-timer">
-        <div className="counter-timer-text">{`${dia} \nDays`}</div>
-        <div className="counter-timer-text">{`${hora} \nHours`}</div>
-        <div className="counter-timer-text">{`${minuto} \nMinutes`}</div>
-        <div className="counter-timer-text">{`${segundo} \nSeconds`}</div>
+        <div className="counter-timer-text">{`${dia} \n Days`}</div>
+        <div className="counter-timer-text">{`${hora} \n Hours`}</div>
+        <div className="counter-timer-text">{`${minuto} \n Minutes`}</div>
+        <div className="counter-timer-text">{`${segundo} \n Seconds`}</div>
       </div>
     </div>
   );
