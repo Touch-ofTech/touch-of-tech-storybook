@@ -9,11 +9,9 @@
 }
 
 .navigation-logo{
-    flex: 1;
     height: 100%;
     font-size: x-large;
     border-radius: 50%;
-    border: 1.5px black solid;
     color: black;
 }
 

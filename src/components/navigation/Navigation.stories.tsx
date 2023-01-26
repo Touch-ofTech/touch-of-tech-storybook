@@ -6,7 +6,7 @@ export default {
   component: Navigation,
   args: {
     labels: ['Home', 'Our Story', 'Venue', 'Itinierary', 'Registry', 'RSVP'],
-    innitital1: 'C',
+    innitial1: 'C',
     innitial2: 'M',
   },
 } as ComponentMeta<typeof Navigation>;
